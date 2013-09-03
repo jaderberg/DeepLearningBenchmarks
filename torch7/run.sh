@@ -32,7 +32,7 @@ for batchsize in 1 10 100 ; do
                 USE_DOUBLE="-double"
             fi
 
-            ~/local/bin/lua benchmark.lua -batch $batchsize $USE_DOUBLE >> "$OUTPUT"
+            torch -batch $batchsize $USE_DOUBLE >> "$OUTPUT"
         fi
 
         if true ; then
@@ -48,7 +48,7 @@ for batchsize in 1 10 100 ; do
             else
                 USE_DOUBLE="-double"
             fi
-            ~/local/bin/lua benchmark.lua -batch $batchsize $USE_DOUBLE -openmp >> "$OUTPUT"
+            torch -batch $batchsize $USE_DOUBLE -openmp >> "$OUTPUT"
         fi
 
         if true ; then
@@ -64,7 +64,7 @@ for batchsize in 1 10 100 ; do
             else
                 USE_DOUBLE="-double"
             fi
-            ~/local/bin/lua benchmark.lua -batch $batchsize $USE_DOUBLE -cuda >> "$OUTPUT"
+            torch benchmark.lua -batch $batchsize $USE_DOUBLE -cuda >> "$OUTPUT"
         fi
     done
 done
