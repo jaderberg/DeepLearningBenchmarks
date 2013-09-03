@@ -24,7 +24,7 @@ cmd:text()
 
 local params = cmd:parse(arg)
 
-random.manualSeed(5555)
+torch.manualSeed(55555)
 
 if params.v then
    printlog = print
